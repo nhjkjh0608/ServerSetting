@@ -29,7 +29,7 @@ ensure_package() {
 
 main(){
   do_upgrade
-  ensure_package python3 python3-venv python3-pip netplan.io openssh-server openssh-client
+  ensure_package python3 python3-venv python3-pip netplan.io openssh-server openssh-client unzip
 }
 
 main "$@"

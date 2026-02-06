@@ -89,9 +89,11 @@ bantime = 24h
 EOF
 
 systemctl restart fail2ban
-
+ss -plnt | grep sshd
 # Guideline
 cat <<EOF
+
+
 ==============================================
 [NEXT STEPS]
 1) From a NEW terminal, verify SSH login using the new port:
@@ -101,7 +103,7 @@ cat <<EOF
    ls -al /home/${USER}/$(basename "$(pwd)")
 
 3) If everything looks good, remove the old user (CAUTION):
-   sudo killall -u vendor_user
+   sudo killall -u <OLD_USER>
    sudo deluser --remove-home <OLD_USER>
 
 4) Finally, exit the current SSH session:

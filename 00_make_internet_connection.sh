@@ -29,7 +29,7 @@ if [[ -z "$ADDR" ]]; then
 fi
 
 DEFAULT_OUT="/etc/netplan/99-internet-connection.yaml"
-python3 _10_make_netplan_yaml.py --addr "$ADDR" --out "$DEFAULT_OUT"
+python3 _00_make_netplan_yaml.py --addr "$ADDR" --out "$DEFAULT_OUT"
 chmod 0600 "$DEFAULT_OUT"
 
 echo "[INFO] netplan generate..."
