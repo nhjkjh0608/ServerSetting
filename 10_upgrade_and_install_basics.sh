@@ -29,6 +29,9 @@ ensure_package() {
 
 main(){
   do_upgrade
+  # set timezone
+  timedatectl set-timezone "$(curl -s http://ip-api.com/line/?fields=timezone)"
+
   ensure_package python3 python3-venv python3-pip netplan.io openssh-server openssh-client unzip
 }
 
