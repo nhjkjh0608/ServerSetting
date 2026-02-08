@@ -51,4 +51,5 @@ awk '
 
 test -s "$tmp"
 cp -a "$tmp" "$CONF"
+chmod 644 "$CONF"
 echo "Updated: $CONF"
