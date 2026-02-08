@@ -20,4 +20,3 @@ pro enable esm-infra || true
 pro enable livepatch || true
 
 echo "Ubuntu pro subscription enabled."
-pro status
