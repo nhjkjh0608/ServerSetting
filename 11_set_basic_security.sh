@@ -47,8 +47,8 @@ if id "$USER" &>/dev/null; then
   echo "Error: user already exist: ${USER}" >&2
   exit 1
 fi
-
-useradd -m -s /bin/bash "$USER"
+useradd -D -s /bin/bash
+useradd -m "$USER"
 passwd "$USER"
 
 groupadd -f sshusers
