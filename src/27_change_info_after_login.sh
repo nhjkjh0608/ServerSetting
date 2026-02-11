@@ -100,3 +100,5 @@ for file in "${TARGET_FILES[@]}"; do
 done
 
 
+# Static motd disabled
+sudo sed -i -E '/^[[:space:]]*#/! s/^([[:space:]]*session[[:space:]]+optional[[:space:]]+pam_motd\.so[[:space:]]+noupdate)/#\1/' /etc/pam.d/sshd
