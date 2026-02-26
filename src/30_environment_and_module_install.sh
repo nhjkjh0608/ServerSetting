@@ -52,3 +52,6 @@ if [ -n "\$LMOD_CMD" ]; then
 fi
 EOF
 chmod 644 /etc/profile.d/z01_anaconda_autoload.sh
+
+
+rm Anaconda3-2025.12-2-Linux-x86_64.sh
