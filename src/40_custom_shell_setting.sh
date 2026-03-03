@@ -28,18 +28,13 @@ cat >> ~/.bashrc << 'EOF'
 addnewuser() {
   local USERNAME="$1"
 
-  if [[ $EUID -ne 0 ]]; then
-    echo "This function must be run as root"
-    return 1
-  fi
-
   if ! id "$USERNAME" >/dev/null 2>&1; then
-    useradd -m "$USERNAME"
+    sudo useradd -m "$USERNAME"
   fi
 
-  usermod -aG sshusers "$USERNAME"
-  chsh -s /bin/bash "$USERNAME"
-  passwd "$USERNAME"
+  sudo usermod -aG sshusers "$USERNAME"
+  sudo chsh -s /bin/bash "$USERNAME"
+  sudo passwd "$USERNAME"
 }
 
 cbcopy() {
